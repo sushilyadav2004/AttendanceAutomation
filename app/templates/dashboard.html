@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Automation</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <h1>
+                Attendance Automation System
+            </h1>
+
+            <p>
+                Employee Attendance Monitoring Dashboard
+            </p>
+
+        </div>
+
+
+        <!-- Dashboard Cards -->
+
+        <div class="cards">
+
+            <!-- Total Employees -->
+
+            <div class="card">
+
+                <h3>
+                    Total Employees
+                </h3>
+
+                <p>
+                    {{ dashboard.total_employees }}
+                </p>
+
+            </div>
+
+
+            <!-- Present Today -->
+
+            <div class="card">
+
+                <h3>
+                    Present Today
+                </h3>
+
+                <p>
+                    {{ dashboard.present_today }}
+                </p>
+
+            </div>
+
+
+            <!-- Absent Today -->
+
+            <div class="card">
+
+                <h3>
+                    Absent Today
+                </h3>
+
+                <p>
+                    {{ dashboard.absent_today }}
+                </p>
+
+            </div>
+
+
+            <!-- Files Processed -->
+
+            <div class="card">
+
+                <h3>
+                    Files Processed
+                </h3>
+
+                <p>
+                    {{ dashboard.files_processed }}
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <div class="menu">
+
+            <a href="/employees">
+                Employees
+            </a>
+
+            <a href="/attendance">
+                Attendance
+            </a>
+
+            <a href="/reports">
+                Reports
+            </a>
+
+            <a href="/file-monitoring">
+                File Monitoring
+            </a>
+
+          <a href="/settings">
+                Schedule Settings
+          </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

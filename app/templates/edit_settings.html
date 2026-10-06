@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Schedule</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Edit Schedule</h1>
+
+        <p>
+            Update Attendance Automation Schedule
+        </p>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <h2>
+            {{ setting.ScheduleName }}
+        </h2>
+
+
+        <form method="post"
+              action="/settings/edit/{{ setting.Id }}">
+
+            <p>
+                <strong>Interval (Minutes)</strong>
+            </p>
+
+            <input
+                type="number"
+                name="interval_minutes"
+                value="{{ setting.IntervalMinutes }}"
+                min="1"
+                required
+            >
+
+
+            <br>
+            <br>
+
+
+            <p>
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="is_active"
+                        value="true"
+                        {% if setting.IsActive %}
+                        checked
+                        {% endif %}
+                    >
+
+                    Active
+
+                </label>
+
+            </p>
+
+
+            <br>
+
+
+            <button
+                type="submit"
+                class="back-button">
+
+                Save
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <br>
+
+
+    <a
+        class="back-button"
+        href="/settings">
+
+        ← Back to Settings
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

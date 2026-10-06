@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>File Monitoring</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>File Monitoring</h1>
+
+        <p>Attendance Input File Monitoring</p>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>File Name</th>
+
+                    <th>File Path</th>
+
+                    <th>File Date</th>
+
+                    <th>Status</th>
+
+                    <th>Processed At</th>
+
+                    <th>Created At</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for file in monitored_files %}
+
+                <tr>
+
+                    <td>
+                        {{ file.FileName }}
+                    </td>
+
+                    <td>
+                        {{ file.FilePath }}
+                    </td>
+
+                    <td>
+                        {{ file.FileDate or '-' }}
+                    </td>
+
+                    <td>
+                        {{ file.Status }}
+                    </td>
+
+                    <td>
+                        {{ file.ProcessedAt or '-' }}
+                    </td>
+
+                    <td>
+                        {{ file.CreatedAt or '-' }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <br>
+
+
+    <a class="back-button"
+       href="/">
+
+        ← Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

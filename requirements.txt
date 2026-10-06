@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+pyodbc
+python-dotenv
+pandas
+openpyxl
+jinja2
+apscheduler

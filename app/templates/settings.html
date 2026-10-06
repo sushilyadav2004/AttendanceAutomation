@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Schedule Settings</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Schedule Settings</h1>
+
+        <p>Attendance Automation Schedule</p>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Schedule Name</th>
+                    <th>Interval (Minutes)</th>
+                    <th>Status</th>
+                    <th>Last Run</th>
+                    <th>Next Run</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for setting in settings %}
+
+                <tr>
+
+                    <td>
+                        {{ setting.ScheduleName }}
+                    </td>
+
+                    <td>
+                        {{ setting.IntervalMinutes }}
+                    </td>
+
+                    <td>
+                        {% if setting.IsActive %}
+                            Active
+                        {% else %}
+                            Inactive
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {{ setting.LastRunAt or '-' }}
+                    </td>
+
+                    <td>
+                        {{ setting.NextRunAt or '-' }}
+                    </td>
+
+                   <td>
+
+                 <a class="back-button"
+                   href="/settings/edit/{{ setting.Id }}">
+
+                    Edit
+
+                 </a>
+
+                </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <br>
+
+
+    <a class="back-button"
+       href="/">
+
+        ← Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

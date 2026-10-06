@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Attendance</h1>
+
+        <p>Employee Attendance Records</p>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Login Time</th>
+                    <th>Logout Time</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for record in attendance_records %}
+
+                <tr>
+
+                    <td>
+                        {{ record[0].EmployeeId }}
+                    </td>
+
+                    <td>
+                        {{ record[1] }}
+                    </td>
+
+                    <td>
+                        {{ record[2] or '-' }}
+                    </td>
+
+                    <td>
+                        {{ record[0].AttendanceDate }}
+                    </td>
+
+                    <td>
+                        {{ record[0].Status }}
+                    </td>
+
+                    <td>
+                        {{ record[0].LoginTime or '-' }}
+                    </td>
+
+                    <td>
+                        {{ record[0].LogoutTime or '-' }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <br>
+
+    <a class="back-button" href="/">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>

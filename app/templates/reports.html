@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Reports</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Reports</h1>
+
+        <p>Attendance Reports</p>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <h2>Attendance Report</h2>
+
+
+        {% if report_exists %}
+
+            <p>
+                Latest Report:
+                <strong>{{ report_file }}</strong>
+            </p>
+
+            <p>
+                Attendance report is available.
+            </p>
+
+            <br>
+
+            <a class="back-button"
+               href="/reports/download">
+
+                Download Attendance Report
+
+            </a>
+
+        {% else %}
+
+            <p>
+                Attendance report is not available yet.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <br>
+
+
+    <a class="back-button"
+       href="/">
+
+        ← Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
